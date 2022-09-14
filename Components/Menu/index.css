@@ -1,0 +1,45 @@
+/* drop down button*/
+.drop-down-button{
+    width : 100px;
+    height : 30px;
+    background-color: darkgray;
+    border : none;
+    border-radius: 8px;
+    margin : 5px;
+}
+
+/* drop down button hover
+    cursor pointer */
+.drop-down-button:hover{
+    cursor:pointer;
+}
+
+/* drop down item hidden
+    view after button click */
+.drop-down-item-hidden{
+    display: none;
+    list-style: none;
+    padding:0;
+    margin:5px;
+}
+
+/* dopr down item css */
+.drop-down-item{
+    width : 100px;
+    height : 30px;
+
+    /* drop down item text center */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border : 1px solid darkgray;
+    border-radius: 8px;
+    margin-bottom : 3px;
+}
+
+/* drop down item hover*/
+.drop-down-item:hover{
+    background-color: darkgray;
+    cursor:pointer;
+}
