@@ -11,8 +11,8 @@
  * **/
 class TooltipInput extends HTMLElement {
     /**
-    * constructor : 최초 실행 생성 Method
-    **/
+     * constructor : 최초 실행 생성 Method
+     **/
     constructor(){
         super();
         this.render();
@@ -31,6 +31,19 @@ class TooltipInput extends HTMLElement {
     connectedCallback(){
         const attrList = this.attributes;
         const input = this.getElementsByClassName('tooltip-input');
+
+        let front = attrList.frontLabel;
+        let back = attrList.backLabel;
+
+        if(front === undefined){
+            front = this.getElementsByClassName('front');
+            front[0].className = "display-none";
+        }
+        if(back === undefined){
+            back = this.getElementsByClassName('back');
+            back[0].className = "display-none";
+        }
+
 
         /**
          * input eventListener
@@ -168,7 +181,6 @@ class TooltipInput extends HTMLElement {
                     /* font */
                     font-style : normal;
                     font-size : 12px;
-                    font-weight : 600;
                     font-family: 'Roboto';
                     color : #6e6e6e;
                 }
@@ -261,7 +273,7 @@ class TooltipInput extends HTMLElement {
     attributeChangedCallback(name, oldValue, newValue){
 
     }
-};
+}
 
 /**
  * tool-tip 이라는 tag가 customElements에 있는가? 없다면 새롭게 define하라는 코드로,
@@ -272,5 +284,3 @@ class TooltipInput extends HTMLElement {
 if ('customElements' in window) {
     customElements.define('tooltip-input', TooltipInput);
 }
-
-
